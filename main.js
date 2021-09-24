@@ -5,23 +5,26 @@ $("#currentDay").text(today.format("dddd MMM Do YYYY"));
 
 $(document).ready(function () { 
     $(".saveBtn").on("click", function () {
-        // Get nearby values of the description in JQuery
+
         var text = $(this).siblings(".description").val();
         var time = $(this).parent().attr("id");
 
-        // Save text in local storage
+    
         localStorage.setItem(time, text);
     })
+//when timeblocks is current time the currnet color should be applied
+// when timeblock is less than current time past color will be showed
+//when timeblock is more than current time future color will be showed
    
     function timeSlot() {
-        //get current number of hours.
+    
         var timeNow = moment().hour();
 
-        // loop over time blocks
+    
         $(".row").each(function () {
             var blockTime = parseInt($(this).attr("id").split("hour")[1]);
 
-            // To check the time and add the classes for background indicators
+        
             if (blockTime < timeNow) {
                 $(this).removeClass("future");
                 $(this).removeClass("present");
@@ -41,7 +44,9 @@ $(document).ready(function () {
         })
     }
 
-    // Get item from local storage if any
+// when i click the save button then the text on that time will be saved in the local storage
+//when i restart the page the local storage text should be showed in the page
+
     $("#hour9 .description").val(localStorage.getItem("hour9"));
     $("#hour10 .description").val(localStorage.getItem("hour10"));
     $("#hour11 .description").val(localStorage.getItem("hour11"));
@@ -54,13 +59,7 @@ $(document).ready(function () {
 
     timeSlot();
 })
-//go through each of the timeblocks 
-// grab the current time and compare it with the time
-//when timeblocks is current time the currnet color should be applied
-// when timeblock is less than current time past color will be showed
-//when timeblock is more than current time future color will be showed
+ 
 
 
-// when i click the save button then the text on that time will be saved in the local storage
-//when i restart the page the local storage text should be showed in the page
 
