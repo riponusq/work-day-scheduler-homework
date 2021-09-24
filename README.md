@@ -5,9 +5,12 @@ I have made this homework in the following ways:
 At first I used Moment Js for the date and day.
 I created timeblocks(business hours) in html.
 I put the free awesome icon for submit button.
-I put the 
+when i click the save button then the text on that time will be saved in the local storage.
+when i restart the page the local storage text should be showed in the page.
+
 ## Credits:
 
 Ben Atkinson. (Instructor)
 Yun Zhao. (TA)
+Sam Ngu (tutor)
 W3 schoolwebsite.
